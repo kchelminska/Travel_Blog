@@ -1,0 +1,580 @@
+/* font-family: 'Josefin Sans', sans-serif; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color1: #222;
+    --color2: #666;
+    --colorhover: orange;
+}
+
+html {
+    font-size: 10px;
+    overflow-x: hidden;
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--color1);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+/* NAV STYLING */
+div.logoin {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+div.logo {
+    text-align: center;
+}
+
+div.logo p:first-child {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+div.logo p:last-child {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 15vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+    box-shadow: var(--color2) 0px 0px 5px 0px;
+}
+
+ul.menu {
+    list-style: none;
+    display: flex;
+    width: 55%;
+    justify-content: space-around;
+}
+
+ul.menu a {
+    text-decoration: none;
+    color: var(--color1);
+    padding: .2em;
+    letter-spacing: 1px;
+    font-size: 1.6em;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+
+}
+
+/* BURGER STYLING */
+
+.burger {
+    display: none;
+}
+
+.burger:hover {
+    cursor: pointer;
+}
+
+.burger:hover .line {
+    background-color: var(--color2);
+}
+
+ul.menu a::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 0%;
+    background-color: var(--colorhover);
+    bottom: 0;
+    left: 0;
+    transition: .3s;
+}
+
+ul.menu a:hover::after {
+    width: 90%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .burger {
+        display: block;
+        transition: .2s;
+        width: 3em;
+        height: 20px;
+        position: relative;
+    }
+
+    .burger.active {
+        transform: rotate(-270deg);
+    }
+
+    .burger .line {
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: var(--color1);
+        border-radius: 20px;
+        transition: top .2s .2s ease, opacity .2s .2s ease, transform .2s .4s ease, background-color .2s .3s ease;
+    }
+
+    .burger .line:first-child {
+        top: 0;
+    }
+
+    .burger .line.line:nth-child(2) {
+        top: calc(50% - 2px);
+    }
+
+    .burger .line.line:nth-child(3) {
+        top: calc(100% - 4px);
+    }
+
+    .burger.active .line:first-child {
+        top: calc(50% - 2px);
+        transform: rotate(-45deg);
+        background-color: var(--colorhover);
+    }
+
+    .burger.active .line.line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active .line.line:nth-child(3) {
+        top: calc(50% - 2px);
+        transform: rotate(45deg);
+        background-color: var(--colorhover);
+    }
+
+    ul.menu {
+        position: absolute;
+        right: 0;
+        top: 15vh;
+        background-color: rgb(247, 247, 247);
+        height: 85vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        transform: translate(0%);
+        transition: 0.3s;
+    }
+
+    ul.active {
+        transform: translate(100%);
+    }
+
+    ul.menu li {
+        width: 65%;
+        height: 65px;
+        line-height: 65px;
+        border-bottom: 1px solid var(--colorhover);
+    }
+
+    ul.menu li a {
+        font-size: 2.2em;
+        letter-spacing: 2px;
+    }
+
+    ul.menu a::after {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 760px) {
+    ul.menu {
+        width: 100%;
+    }
+}
+
+/* HEADER STYLING */
+header {
+    padding-top: 25vh;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-image: url(/img/bgimg2.jpg);
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.motto {
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.motto p {
+    width: 100%;
+}
+
+header .motto p,
+header .motto button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+.motto p:first-child {
+    font-size: 1.7em;
+    top: 15vh;
+}
+
+.motto p:nth-child(2) {
+    font-size: 6.3em;
+    top: 21vh;
+}
+
+.motto p:nth-child(3) {
+    font-size: 1.7em;
+    top: 33vh;
+}
+
+button {
+    top: 45vh;
+    background-color: var(--color1);
+    border-style: none;
+    border: 1px solid var(--color1);
+    border-radius: 5px;
+    height: 40px;
+}
+
+button a {
+    color: rgb(221, 217, 217);
+    font-size: 1em;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 40px;
+    text-decoration: none;
+    padding: 12px 20px;
+}
+
+@media (orientation: landscape) {
+    .motto {
+        height: 65vh;
+        width: 80%;
+    }
+}
+
+@media (orientation: portrait) {
+    .motto {
+        height: 60vh;
+    }
+}
+
+@media (min-width: 530px) and (orientation: landscape) {
+    .motto p:first-child {
+        top: 10vh;
+    }
+
+    .motto p:nth-child(2) {
+        font-size: 7em;
+        top: 18vh;
+    }
+
+    .motto p:nth-child(3) {
+        top: 38vh;
+    }
+
+    .motto button {
+        top: 50vh;
+    }
+}
+
+@media (min-width: 360px) and (orientation: portrait) {
+    .motto p:first-child {
+        font-size: 2.1em;
+        top: 16vh;
+    }
+
+    .motto p:nth-child(2) {
+        font-size: 7.2em;
+    }
+
+    .motto p:nth-child(3) {
+        font-size: 2.1em;
+        top: 32vh;
+    }
+}
+
+@media (min-width: 400px) and (orientation: portrait) {
+    .motto p:first-child {
+        top: 16vh;
+    }
+
+    .motto p:nth-child(2) {
+        font-size: 8em;
+    }
+
+    .motto p:nth-child(3) {
+        top: 32vh;
+    }
+}
+
+@media (min-width: 700px) and (orientation: landscape) {
+    .motto p:first-child {
+        font-size: 2em;
+    }
+
+    .motto p:nth-child(2) {
+        font-size: 11em;
+    }
+
+    .motto p:nth-child(3) {
+        font-size: 2em;
+        top: 42vh;
+    }
+
+    .motto button {
+        top: 51vh;
+    }
+
+    .motto button a {
+        font-size: 1.2em;
+        line-height: 34px;
+    }
+}
+
+@media (min-width: 750px) and (orientation: portrait) {
+    .motto p:first-child {
+        font-size: 4em;
+    }
+
+    .motto p:nth-child(2) {
+        font-size: 15em;
+    }
+
+    .motto p:nth-child(3) {
+        font-size: 4em;
+        top: 35vh;
+    }
+
+    .motto button {
+        height: 50px;
+        padding: 0 20px;
+    }
+
+    .motto button a {
+        font-size: 2em;
+        font-weight: 400;
+        line-height: 50px;
+
+    }
+}
+
+@media (min-width: 850px) and (orientation: landscape) {
+    .motto p:first-child {
+        font-size: 3em;
+    }
+
+    .motto p:nth-child(2) {
+        font-size: 13em;
+    }
+
+    .motto p:nth-child(3) {
+        font-size: 3em;
+        top: 40vh;
+    }
+
+    .motto button {
+        top: 52vh;
+    }
+
+    .motto button a {
+        padding: 12px 35px;
+    }
+
+
+}
+
+@media (min-width: 1000px) {
+    .motto p:first-child {
+        top: 12vh;
+    }
+
+    .motto p:nth-child(2) {
+        /* font-size: 13em; */
+        top: 20vh;
+    }
+
+    .motto p:nth-child(3) {
+        top: 40vh;
+    }
+
+    .motto button {
+        top: 50vh;
+        transition: 0.3s;
+        height: 50px;
+        padding: 0 10px;
+    }
+
+    .motto button a {
+        font-size: 2em;
+        transition: 0.2s;
+        font-weight: 400;
+        line-height: 50px;
+    }
+
+    .motto button:hover {
+        background-color: var(--colorhover);
+        border: 1px solid var(--colorhover);
+    }
+
+    .motto button:hover a {
+        color: var(--color1);
+    }
+}
+
+/* ABOUT STYLING */
+#about {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+#about>div:first-of-type {
+    padding: 30px;
+}
+
+#about>div:first-of-type:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 2px;
+    background-color: var(--colorhover);
+    margin-left: 20px;
+}
+
+#about div h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+}
+
+#about .textabout {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+#about button {
+    margin-top: 20px;
+}
+
+#about .photoabout {
+    width: 100%;
+    height: 300px;
+    background-image: url(/img/about.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 500px) and (orientation:landscape) {
+    #about {
+        flex-direction: row;
+        height: 115vh;
+        margin-bottom: 50px;
+    }
+
+    #about>div:first-of-type {
+        width: 50%;
+        flex-grow: 1;
+    }
+
+    #about .photoabout {
+        width: 30%;
+        height: 100%;
+        margin-right: 30px;
+        align-self: stretch;
+    }
+}
+
+@media (min-width: 600px) and (orientation:landscape) {
+    #about {
+        height: 90vh;
+    }
+}
+
+@media (min-width: 700px) and (orientation:landscape) {
+    #about {
+        height: 80vh;
+    }
+}
+
+@media (min-width: 800px) and (orientation:landscape) {
+    #about {
+        height: 85vh;
+    }
+}
+
+@media (min-width: 700px) and (orientation:portrait) {
+    #about {
+        flex-direction: row;
+        height: 40vh;
+        margin-bottom: 50px;
+    }
+
+    #about .textabout {
+        font-size: 1.8em;
+    }
+
+    #about>div:first-of-type {
+        width: 50%;
+        flex-grow: 1;
+    }
+
+    #about .photoabout {
+        width: 30%;
+        height: 100%;
+        margin-right: 30px;
+        align-self: stretch;
+    }
+}
+
+@media (min-width: 1000px) and (orientation:landscape) {
+    #about {
+        max-width: 1000px;
+        max-height: 450px;
+        height: 80vh;
+        margin-right: auto;
+        margin-left: auto;
+        /* padding-bottom: 20px; */
+    }
+
+    #about .textabout {
+        font-size: 1.8em;
+    }
+}
+
+/* STYLOWANIE SEKCJA TRIPS */
