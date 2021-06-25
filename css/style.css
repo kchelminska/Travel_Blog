@@ -634,7 +634,6 @@ button a {
     width: 40%;
     height: 2px;
     background-color: var(--colorhover);
-
 }
 
 #trips .photo {
@@ -758,4 +757,16 @@ button a {
 #contact {
     height: 100vh;
     background-color: var(--colorhover);
+}
+
+
+/* <------- Stylowanie sekcji footer -------> */
+footer {
+    /* height: 80px; */
+    background-color: var(--color1);
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 25px;
+    padding: 10px 0;
 }
