@@ -660,15 +660,15 @@ button a {
 }
 
 #trips .photo:nth-of-type(1) {
-    background-image: url(/img/_DSC0312.jpg);
+    background-image: url(/img/trip1.jpg);
 }
 
 #trips .photo:nth-of-type(2) {
-    background-image: url(/img/bgimg4.jpg);
+    background-image: url(/img/trip2.jpg);
 }
 
 #trips .photo:nth-of-type(3) {
-    background-image: url(/img/bgimg.jpg);
+    background-image: url(/img/trip3.jpg);
 }
 
 #trips button {
@@ -759,13 +759,58 @@ button a {
     background-color: var(--colorhover);
 }
 
+#contact h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    line-height: 150px;
+    /* padding-top: 30px;
+    padding-bottom: 30px; */
+    text-align: center;
+}
+
+#contact div {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+#contact div form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact div form label {
+    font-size: 1.7em;
+}
+
+#contact div form input {
+    border-style: none;
+    background-color: transparent;
+    border: 2px solid var(--color1);
+    border-radius: 2px;
+    font-size: 1.7em;
+    line-height: 1.8em;
+    margin-bottom: 20px;
+}
+
+#contact div form input:nth-of-type(3) {
+    height: 150px
+}
+
+input:focus {
+    background-color: pink;
+}
+
+
+
 
 /* <------- Stylowanie sekcji footer -------> */
 footer {
     background-color: var(--color1);
     color: white;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
     line-height: 25px;
     padding: 10px 0;
 }
