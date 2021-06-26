@@ -762,7 +762,6 @@ button a {
 
 /* <------- Stylowanie sekcji footer -------> */
 footer {
-    /* height: 80px; */
     background-color: var(--color1);
     color: white;
     text-align: center;
