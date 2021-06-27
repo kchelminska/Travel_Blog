@@ -260,19 +260,21 @@ button {
     top: 46vh;
     background-color: var(--color1);
     border-style: none;
+    border-radius: 5px;
     border: 1px solid var(--color1);
-    height: 30px;
+    transition: .3s;
 }
 
 button a {
+    display: block;
     color: rgb(221, 217, 217);
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-family: 'Josefin Sans', sans-serif;
     text-decoration: none;
     font-weight: 400;
-    line-height: 30px;
-    padding: 12px 20px;
-
+    line-height: 35px;
+    padding: 0 20px;
+    transition: .3s;
 }
 
 @media (orientation: landscape) {
@@ -297,7 +299,6 @@ button a {
         top: 48vh;
     }
 }
-
 
 @media (min-width: 530px) and (orientation: landscape) {
     .motto p:first-child {
@@ -346,17 +347,6 @@ button a {
     .motto p:nth-child(3) {
         top: 32vh;
     }
-
-    button {
-        height: 40px;
-    }
-
-    button a {
-        font-size: 1.5em;
-        line-height: 40px;
-        padding: 12px 30px;
-
-    }
 }
 
 @media (min-width: 700px) and (orientation: landscape) {
@@ -375,13 +365,7 @@ button a {
 
     .motto button {
         top: 51vh;
-        height: 40px;
-
-    }
-
-    .motto button a {
         font-size: 1.5em;
-        line-height: 40px;
     }
 }
 
@@ -399,15 +383,9 @@ button a {
         top: 35vh;
     }
 
-
-    .motto button {
-        height: 40px;
-        padding: 0 20px;
-    }
-
     .motto button a {
         font-size: 2em;
-        line-height: 40px;
+        padding: 10px 40px;
     }
 }
 
@@ -429,12 +407,9 @@ button a {
         top: 52vh;
     }
 
-    .motto button a {
-        font-size: 2em;
-        line-height: 40px;
+    button a {
+        font-size: 1.7em;
     }
-
-
 }
 
 @media (min-width: 1000px) and (orientation:landscape) {
@@ -452,18 +427,11 @@ button a {
 
     .motto button {
         top: 50vh;
-        transition: 0.3s;
-    }
-
-    button {
-        height: 50px;
-        width: 250px;
     }
 
     button a {
-        transition: 0.2s;
-        font-size: 2em;
-        line-height: 50px;
+        padding: 5px 40px;
+        cursor: pointer;
     }
 
     button:hover {
@@ -672,8 +640,11 @@ button a {
 }
 
 #trips button {
-    width: 170px;
     margin: 30px auto;
+}
+
+#trips button a {
+    padding: 0 50px;
 }
 
 @media (orientation:landscape) {
@@ -741,68 +712,140 @@ button a {
         background-size: 110%;
     }
 
-    #trips button {
-        height: 50px;
-        width: 250px;
-    }
-
     #trips button a {
-        font-size: 2em;
-        line-height: 50px;
+        font-size: 1.8em;
+        padding: 5px 80px;
+
     }
 }
 
 /* Stylowanie sekcji kontakt */
 
 #contact {
-    height: 100vh;
     background-color: var(--colorhover);
 }
 
 #contact h1 {
+    position: relative;
+    line-height: 70px;
+    padding: 50px 0 20px 0;
     font-size: 2.5em;
     text-transform: uppercase;
-    line-height: 150px;
-    /* padding-top: 30px;
-    padding-bottom: 30px; */
     text-align: center;
+
 }
 
-#contact div {
-    margin: 0 auto;
+#contact h1:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 2px;
+    background-color: var(--color1);
+}
+
+#contact>div {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    align-items: center;
+
 }
 
 #contact div form {
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
 }
 
 #contact div form label {
     font-size: 1.7em;
+    margin-bottom: 5px;
 }
 
-#contact div form input {
+#contact div form input,
+textarea {
     border-style: none;
     background-color: transparent;
     border: 2px solid var(--color1);
     border-radius: 2px;
     font-size: 1.7em;
     line-height: 1.8em;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-#contact div form input:nth-of-type(3) {
-    height: 150px
+#contact button {
+    width: 80%;
+    margin: 0 auto;
 }
 
-input:focus {
-    background-color: pink;
+textarea {
+    height: 150px;
 }
 
+.socials {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+    width: 80%;
+}
 
+.socials a {
+    text-decoration: none;
+    color: var(--color1);
+}
+
+.socials a i {
+    font-size: 3em;
+    transition: .3s;
+}
+
+@media(min-width: 600px) {
+    #contact>div {
+        /* display: flex; */
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    #contact div form {
+        width: 40%;
+        max-width: 400px;
+    }
+
+    .socials {
+        align-self: stretch;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        padding: 0;
+    }
+
+    .socials a {
+        margin: 15px 0;
+    }
+
+    .socials a i {
+        font-size: 4em;
+    }
+}
+
+@media (min-width: 1000px) {
+    #contact button:hover {
+        background-color: var(--color2);
+    }
+
+    #contact button:hover a {
+        color: var(--color1);
+    }
+
+    .socials a i:hover {
+        color: var(--color2);
+    }
+}
 
 
 /* <------- Stylowanie sekcji footer -------> */
