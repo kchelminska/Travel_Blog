@@ -629,15 +629,15 @@ button a {
 }
 
 #trips .photo:nth-of-type(1) {
-    background-image: url(/img/trip1.jpg);
+    background-image: url(../img/trip1.jpg);
 }
 
 #trips .photo:nth-of-type(2) {
-    background-image: url(/img/trip2.jpg);
+    background-image: url(../img/trip2.jpg);
 }
 
 #trips .photo:nth-of-type(3) {
-    background-image: url(/img/trip3.jpg);
+    background-image: url(../img/trip3.jpg);
 }
 
 #trips button {
