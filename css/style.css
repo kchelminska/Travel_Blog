@@ -16,11 +16,11 @@ html {
     overflow-x: hidden;
     font-family: 'Josefin Sans', sans-serif;
     color: var(--color1);
+    scroll-behavior: smooth; 
 }
 
 .container {
     margin: 0 auto;
-    max-width: 1400px;
 }
 
 /* NAV STYLING */
@@ -55,7 +55,6 @@ nav {
     right: 0;
     left: 0;
     height: 15vh;
-    max-width: 1400px;
     margin: 0 auto;
     padding: 2em;
     background-color: rgb(255, 255, 255);
@@ -746,6 +745,7 @@ button a {
     width: 40%;
     height: 2px;
     background-color: var(--color1);
+    
 }
 
 #contact>div {
