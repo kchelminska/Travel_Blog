@@ -1,3 +1,14 @@
-# Travel_Blog
+# Self_Blog
+My first responsive website.
 
-My first website built using CSS, HTML and JavaScript.
+## Technologies
+* Javascript, HTML, CSS
+
+## Activation
+To run this project visit: https://kchelminska.github.io/Travel_Blog/
+
+## Project status
+* Complete
+
+## Sources / inspiration
+Own inspiration / Own project
